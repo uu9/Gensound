@@ -90,39 +90,3 @@ std::string read_ini_entry(std::string app_name, std::string key_name, std::stri
 	entry_val = nullptr;
 	return entry_str;
 }
-
-/*
-int mian() {
-	std::string status_code;
-
-	LPWSTR username = new WCHAR[20];
-	LPWSTR password = new WCHAR[20];
-	LPWSTR port = new WCHAR[10];
-	LPWSTR root = new WCHAR[MAX_PATH];
-	LPWSTR lpPath = L"./config.ini";
-	lstrcpyW(username, L"user");
-	lstrcpyW(password, L"user");
-	lstrcpyW(port, L"21");
-	lstrcpyW(root, L"E:\\tmp\\");
-	std::string path_str = WCharToMByte(lpPath);
-
-	if (isFileExists_stat(path_str) == false) {
-		WritePrivateProfileStringW(L"CONFIG", L"Username", username, lpPath);
-		WritePrivateProfileStringW(L"CONFIG", L"Password", password, lpPath);
-		WritePrivateProfileStringW(L"CONFIG", L"Port", port, lpPath);
-		WritePrivateProfileStringW(L"CONFIG", L"Root", root, lpPath);
-		std::cout << "Generating file 'config.ini'" << std::endl;
-	}
-	else {
-		GetPrivateProfileStringW(L"CONFIG", L"Username", L"user", username, 20, lpPath);
-		GetPrivateProfileStringW(L"CONFIG", L"Password", L"user", password, 20, lpPath);
-		GetPrivateProfileStringW(L"CONFIG", L"Port", L"21", port, 10, lpPath);
-		GetPrivateProfileStringW(L"CONFIG", L"Root", L"E:\\tmp\\", root, MAX_PATH, lpPath);
-		std::cout << "Reading file 'config.ini'" << std::endl;
-	}
-	std::string local_root = WCharToMByte(root); // The backslash at the end is necessary!
-	int port_i = _wtoi(port);
-	std::string username_s = WCharToMByte(username);
-	std::string password_s = WCharToMByte(password);
-}
-*/
